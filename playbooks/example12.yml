@@ -1,0 +1,34 @@
+---
+
+- 
+  hosts : ubuntugroup
+  user : ansible
+  gather_facts : true
+
+
+  vars :
+    motd_centos : "Example data only for Centos Machines - updated"
+    motd_ubuntu : "Example data only for Ubuntu Machines - updated"
+
+  tasks :
+    - name : Configure a motd - Centos
+      copy : 
+        content : "{{ motd_centos }}"
+        dest : /tmp/motd
+      notify : MOTD Changed
+      when : ansible_distribution == "CentOS"
+
+    - name : Configure a motd - Ubuntu
+      copy : 
+        content : "{{ motd_ubuntu }}"
+        dest : /tmp/motd
+      notify : MOTD Changed
+      when : ansible_distribution == "Ubuntu"
+
+  handlers :
+    - name : MOTD Changed
+      debug : 
+        msg : The MOTD has been changed on this System
+    
+...
+

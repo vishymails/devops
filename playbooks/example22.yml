@@ -1,0 +1,18 @@
+---
+
+-
+  hosts : all
+
+  tasks :
+    - name : When Example task1 
+      command : hostname -s
+      when : 
+        - ansible_distribution == "CentOS"
+        - ansible_distribution_major_version >= "5"
+      register : command_register
+
+    - name : Show Register
+      debug : 
+        var : command_register
+        
+...

@@ -1,0 +1,16 @@
+---
+
+- 
+  name : A Simple Play
+  hosts : centosgroup
+  user : ansible
+  gather_facts : false
+
+
+  tasks :
+    - name : Configure a motd
+      copy : 
+        src : centos_motd
+        dest : /tmp/motd
+        
+...

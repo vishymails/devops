@@ -1,0 +1,24 @@
+---
+
+-
+  hosts : Centos1
+
+  vars_prompt :
+    - name : username
+      private : false
+
+    - name : password
+      private : true
+
+  tasks :
+    - name : Test Username
+      debug : 
+        msg : "{{ username }}"
+
+    - name : Test Password
+      debug :
+        msg : "{{ password }}"
+
+          
+...
+

@@ -1,0 +1,23 @@
+---
+- 
+  hosts : ubuntugroup
+
+  tasks : 
+    - name : Create new Users
+      user :
+        name : "{{ item.key }}"
+        comment : "{{ item.value.full_name }}"
+        state : present
+      with_dict :
+          rao :
+            full_name : Vishwanath Rao
+          kumar : 
+            full_name : Bimal
+          baskaran :
+            full_name : Charles
+          Balain :
+            full_name : Deepak
+
+
+...
+

@@ -1,0 +1,15 @@
+---
+-
+  hosts : all
+  gather_facts : true
+
+  tasks :
+    - name : Test Host Vars
+      debug : 
+        msg : "{{ hostvars[ansible_hostname].ansible_port }}"
+
+    - name : Test Group Vars 
+      debug :
+        msg : "{{ ansible_user }} "
+
+...

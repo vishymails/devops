@@ -1,0 +1,13 @@
+---
+
+-
+  hosts : ubuntugroup
+  tasks :
+    - name : Play2 - Task1
+      debug :
+        msg : Play2 - Task1
+    
+    - import_tasks : play2_task2.yml
+
+...
+

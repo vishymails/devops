@@ -1,0 +1,17 @@
+---
+
+-
+  hosts : all
+  gather_facts : true
+
+  tasks :
+    - name : Test Host Vars
+      debug :
+        msg : "{{ hostvars[ansible_hostname].ansible_port }}"
+    
+    - name : Test Host Vars python dictionary notation
+      debug :
+        msg : "{{ hostvars[ansible_hostname]['ansible_port'] }}"
+        
+...
+

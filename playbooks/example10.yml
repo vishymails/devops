@@ -1,0 +1,23 @@
+---
+
+- 
+  hosts : ubuntugroup
+  user : ansible
+  gather_facts : false
+
+  vars : 
+    motd : "Example Data from yaml file \n"
+
+  tasks :
+    - name : Configure a motd
+      copy : 
+        content : "{{ motd }}"
+        dest : /tmp/motd
+
+    - name : line insert 
+      lineinfile :
+        path : /tmp/motd
+        line : 'Added by another task'
+        insertbefore : BOF
+
+...

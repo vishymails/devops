@@ -1,0 +1,12 @@
+[centosgroup]
+Centos1
+Centos2
+Centos3
+Centos[4:200]
+
+[ubuntugroup]
+Ubuntu1
+Ubuntu2
+Ubuntu3
+Ubuntu[100:300]
+

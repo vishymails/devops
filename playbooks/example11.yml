@@ -1,0 +1,27 @@
+---
+
+- 
+  hosts : all
+  user : ansible
+  gather_facts : true
+
+
+  vars :
+    motd_centos : "Example data only for Centos Machines"
+    motd_ubuntu : "Example data only for Ubuntu Machines"
+
+  tasks :
+    - name : Configure a motd - Centos
+      copy : 
+        content : "{{ motd_centos }}"
+        dest : /tmp/motd
+      when : ansible_distribution == "CentOS"
+
+    - name : Configure a motd - Ubuntu
+      copy : 
+        content : "{{ motd_ubuntu }}"
+        dest : /tmp/motd
+      when : ansible_distribution == "Ubuntu"
+    
+...
+

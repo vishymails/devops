@@ -1,0 +1,14 @@
+[centosgroup]
+Centos1
+Centos2
+Centos3
+
+[ubuntugroup]
+Ubuntu1
+Ubuntu2
+Ubuntu3
+
+[linux:children]
+centosgroup
+ubuntugroup
+

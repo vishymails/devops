@@ -1,0 +1,13 @@
+[centosgroup]
+Centos1
+Centos2
+Centos3
+192.168.1.[1:255]
+
+[ubuntugroup]
+Ubuntu1
+Ubuntu2
+Ubuntu3
+192.168.[2:9].[1:255]
+
+

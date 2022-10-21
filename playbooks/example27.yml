@@ -1,0 +1,22 @@
+---
+- 
+  hosts : ubuntugroup
+
+  tasks : 
+    - name : Create new Users
+      user :
+        name : "{{ item }}"
+        comment : "{{ item.1 | title  }} {{ item.0.surname }}"
+        state : absent
+      with_subelements :
+          - family :
+              surname : Rao
+              members :
+                - Vishwanath
+                - Sushanth
+                - Mahanth
+                - Sreenath
+                - Pinku
+          - members
+...
+

@@ -1,0 +1,50 @@
+---
+
+- 
+  hosts : ubuntugroup
+
+  vars_files :
+    - example13_vars.yml
+
+  tasks :
+    - name : Test Dictionary Key Value 
+      debug :
+        msg : result is {{ example_key }}
+
+    - name : Test Dictionary Key Value 2
+      debug :
+        msg : result is {{ dict }}
+    
+    - name : Test Dictionary Key Value 3
+      debug :
+        msg : result is {{ dict.dict_key }}
+
+    - name : Test Dictionary Key Value 4
+      debug :
+        msg : result is {{ inline_dict.dict_key1 }}
+
+    - name : Test NamedList Value 1 
+      debug :
+        msg : result is {{ named_list }}
+
+    - name : Test NamedList Value 2 with dot notation
+      debug :
+        msg : result is {{ named_list.2 }}
+
+    - name : Test NamedList Value 3 using python way
+      debug :
+        msg : result is {{ named_list[3] }}
+
+    - name : Test Inline NamedList Value 1 
+      debug :
+        msg : result is {{ inline_named_list }}
+
+    - name : Test Inline NamedList Value 2 with dot notation
+      debug :
+        msg : result is {{ inline_named_list.2 }}
+
+    - name : Test Inline NamedList Value 3 using python way
+      debug :
+        msg : result is {{ inline_named_list[3] }}
+
+...
